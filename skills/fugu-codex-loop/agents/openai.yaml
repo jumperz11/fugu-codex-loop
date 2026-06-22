@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fugu Codex Loop"
+  short_description: "Run Fugu as orchestrator and Codex as builder with repo memory."
+  default_prompt: "Set up or run the Fugu + Codex orchestrated build loop for this repo."

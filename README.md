@@ -106,9 +106,32 @@ failures, frozen contracts, disputes, and what gets built next.
 │   ├── 01-fugu-orchestrator.md
 │   ├── 02-codex-builder.md
 │   └── 03-fugu-review.md
+├── skills/
+│   └── fugu-codex-loop/   # optional installable Codex skill
 └── templates/             # blank templates to reset between blocks
     ├── HANDOFF.template.md
     └── SLICE.template.md
+```
+
+## Optional: install as a Codex skill
+
+This repo also includes an installable skill at:
+
+```txt
+skills/fugu-codex-loop
+```
+
+To install it locally:
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R skills/fugu-codex-loop ~/.codex/skills/
+```
+
+Then ask Codex:
+
+```txt
+Use the fugu-codex-loop skill to set up this repo for Fugu orchestration.
 ```
 
 ## License
