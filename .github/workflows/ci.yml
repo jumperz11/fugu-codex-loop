@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  doctor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate example repo memory
+        run: python3 scripts/doctor.py examples/demo-run/repo
+      - name: Lint scripts compile
+        run: python3 -m py_compile scripts/doctor.py scripts/init.py
+      - name: Validate skill structure
+        run: |
+          test -f skills/fugu-codex-loop/SKILL.md
+          head -1 skills/fugu-codex-loop/SKILL.md | grep -q '^---$'
